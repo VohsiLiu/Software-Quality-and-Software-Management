@@ -1,0 +1,198 @@
+\section{软件过程的历史演变和经典工作}
+
+软件发展的两个趋势：
+\begin{itemize}
+    \item 软件项目规模日益扩大：使得软件越来越难做
+    \item 软件在整个系统中的比重日益增加：将软件质量问题的影响上升到前所未有的高度
+\end{itemize}
+
+软件危机：指\textbf{落后的软件生产方式}无法满足迅速增长的计算机软件需求，从而导致软件开发与维护过程中出现一系列严重问题的现象。主要体现有：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 软件开发费用和进度失控
+        \item 软件可靠性差
+        \item 生产出来的软件难以维护
+        \item 用户对“已完成”系统不满意现象经常发现
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+软件发展的三大阶段：
+\begin{itemize}
+    \item 软硬件一体化阶段：软件完全依附于硬件，软件作坊（50年代到70年代）
+    \item 软件成为独立的产品（70年代到90年代）
+    \item 网络化和服务化（90年代中期至今）
+\end{itemize}
+
+
+\subsection{软硬件一体化阶段}
+
+\subsubsection{软件完全依赖于硬件}
+软件应用典型特征：软件支持硬件完成计算任务、功能单一、复杂度有限、几乎不需要需求变更。
+
+软件开发典型特征：硬件太贵、团队以硬件工程师和数学家为主。
+
+典型软件过程和实践：非常线性、三思而后行 (measure twice, cut once)
+
+\subsubsection{软件作坊}
+软件应用典型特征：功能简单、规模小
+
+软件开发典型特征：很多非专业领域人员涌入软件、高级程序语言出现、质疑权威文化盛行
+
+典型软件过程和实践：Code and Fix、编码 + 改错
+
+\subsubsection{考试题目}
+\begin{problem}
+	下列软件应用和开发的典型特征中属于软硬件一体化阶段的是？
+	\uline{BC}   {\kaishu A. D.属于软件成为独立的产品}
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{enumerate}[label=\Alph*.]
+            \item 可以通过引入操作系统，摆脱了硬件束缚
+            \item 几乎不需要考虑需求变更
+            \item 缺乏科班的软件工程师
+            \item 系统兼容对应软件开发的成败非常关键
+        \end{enumerate}
+    \end{multicols}
+    \vspace{-1em}
+\end{problem}
+
+
+\subsection{软件成为独立的产品}
+软件应用典型特征：摆脱了硬件的束缚(OS)、功能强大、个人电脑出现 $\rightarrow$ 普通人成为软件用户 $\rightarrow$ 需求多变和兼容性要求、来自市场的压力
+
+典型软件过程和实践：
+\begin{itemize}
+    \item 形式化方法：将所有的方法当作数学方法，做数学化的检验，主要解决质量和正确性问题
+    \item 结构化程序设计和瀑布模型：自顶向下，逐步求精
+    \item 问题和不足（效率和质量）
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 形式化在扩展性和可用性方面存在不足
+            \item 瀑布模型成为一个重文档、慢节奏的过程
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+\end{itemize}
+
+
+\subsection{网络化和服务化}
+\subsubsection{网络化和服务化}
+软件应用典型特征：功能更复杂、规模更大、用户数量急剧增加、快速演化和需求不确定、分发方法的变化(SaaS)
+
+典型软件过程和实践：
+\begin{itemize}
+    \item 迭代式（90年代中后期）大型软件系统的开发过程也是一个逐步学习和交流的过程，软件系统的交付不是一次完成，而是通过多个迭代周期，逐步来交付。
+    \item 雪鸟会议和敏捷宣言
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 个体和互动 胜过 流程和工具
+            \item 可以工作的软件 胜过 详尽的文档
+            \item 客户合作 胜过 合同谈判
+            \item 响应变化 胜过 遵循计划
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+    \vspace{-0.4em}
+    \begin{itemize}
+        \item 也就是说，尽管右项有其价值，我们更重视左项的价值
+    \end{itemize}
+    \item XP(eXtreme Programming)方法：偏重于一些工程实践的描述
+    \item Scrum: 管理框架和管理实践
+    \item KanBan
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 精益生产（丰田制造法）的具体实现
+            \item 可视化工作流、限定WIP、管理周期时间
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+    \item 开源软件开发方式：
+    \begin{itemize}
+        \item 一种基于并行开发模式的软件开发的组织与管理方式
+        \item Linus 定律：如果有足够多的beta测试者和合作开发者，几乎所有问题都会很快显现，然后自然有人会把它解决
+        \item “早发布，常发布，倾听用户的反馈”、“把你的用户当作开发合作者对待，如果想让代码质量快速提升并有效排错，这是最省心的途径”、“设计上的完美不是没有东西可以再加，而是没有东西可以再减”
+        \item 代码管理：严格的代码提交社区审核制度、内部开源(inner source)、众包(Crowdsourcing)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{更深化的网络化和服务化}
+软件应用典型特征：
+\begin{itemize}
+    \item 进一步服务化和网络化（移动是主流）随处可见(pervasive)
+    \item 用户需求的多样性进一步凸显
+    \item 软件产品和服务的地位变化
+    \item 错综复杂的部署环境
+    \item 近乎苛刻的用户期望
+    \vspace{-0.8em}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 多：功能丰富，个性化
+            \item 快：快速使用，及时更新，快速解决问题
+            \item 好：稳定，可靠，安全，可信
+            \item 省：用户的获得成本低，最好免费
+        \end{itemize}
+    \end{multicols}
+    \vspace{-1em}
+\end{itemize}
+
+软件开发的典型特征：
+\begin{itemize}
+    \item 空前强大的开发和部署环境：XaaS，IaaS、PaaS、SaaS
+    \item 盛行开源和共享文化
+    \item 盛行敏捷开发
+    \item 软件工程的潜在支撑力量获得了长足进步（AI、大数据、云计算）
+\end{itemize}
+
+典型软件过程和实践：DevOps
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 开发运维一体化
+        \item 方法论的基础是软件敏捷开发、精益思想和看板 KanBan 方法
+        \item 以领域驱动设计为指导的微服务架构方式
+        \item 大量虚拟化技术的使用
+        \item 一切皆服务 XaaS 的理念指导
+        \item 构建了强大的工具链，支持高水平自动化
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\subsection{考试题目}
+\begin{problem}
+软件发展三大阶段的特点和主流开发方法
+\begin{itemize}
+    \item 软硬件一体化
+    \begin{itemize}
+        \item 特点：软件支持硬件完成计算任务、功能单一、复杂度有限、几乎不需要需求变更
+        \item 主流开发方法：三思而后行；Code and Fix；编码 + 改错
+    \end{itemize}
+    \item 软件成为独立的产品
+    \begin{itemize}
+        \item 特点：摆脱了硬件的束缚（操作系统）、功能强大、个人电脑出现、需求多变、兼容性要求、来自市场的压力
+        \item 主流开发方法：形式化方法、结构化程序设计和瀑布模型
+    \end{itemize}
+    \item 网络化和服务化
+    \begin{itemize}
+        \item 特点：功能更复杂、规模更大、用户数量急剧增加、快速演化和需求不确定、分发方式的变化、进一步的服务化和网络化、盛行开源和共享文化
+        \item 主流开发方法：迭代式开发、敏捷开发(XP、Scrum、Kanban)、开源软件开发方式、DevOps
+    \end{itemize}
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+请结合软件发展的三大阶段，描述不同阶段的典型软件开发方法和实践
+\begin{itemize}
+    \item 软硬件一体化：线性顺序过程、事实上是硬件开发流程，measure twice, cut once
+    \item 软件成为独立产品：结构化程序设计、瀑布生命周期模型、成熟度运动
+    \item 网络化和服务化：迭代式开发、敏捷运动
+\end{itemize}
+\end{problem}
+
+
+
+

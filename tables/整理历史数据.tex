@@ -1,0 +1,47 @@
+\vspace{-0.5em}
+\begin{spacing}{1.2}
+    \centering
+    \begin{longtable}{|m{1.5cm}<{\centering}|m{7cm}|m{6cm}|}
+        \hline
+        \textbf{方法} & \multicolumn{1}{c|}{\textbf{方法描述}} & \multicolumn{1}{c|}{\textbf{方法特点}} \\ \hline
+        简单方法
+        & 最小值作为$VS$，最大值作为$VL$，中值作为$M$，$VS$与$M$均值作为$S$，$VL$与$M$均值作为$L$
+        & 优点：计算简单；缺点：不稳定 \\ \hline
+        正态分布法
+        & 均值作为$M$，计算标准差$\sigma$，则$S=M-\sigma$，$VS=M-2\sigma$，$L=M+\sigma$，$VL=M+2\sigma$
+        & 优点：相对稳定，在历史数据基本符合正态分布的情况下，可以给出非常好的相对大小矩阵 \\ \hline
+        对数正态分布法
+        & \vspace{-1em}
+        \begin{enumerate}[label=\arabic*.,leftmargin=1em]
+            \item 以$e$为底计算所有数据的自然对数
+            \item 取对数之后的值的均值作为$M$，计算相应标准差$\sigma$，$S=M-\sigma$，$VS=M-2\sigma$，$L=M+\sigma$，$VL=M+2\sigma$
+            \item 取反对数
+        \vspace{-1.3em}
+        \end{enumerate}
+        & 优点：更加符合人们对于程序的规模的直观感觉，因为大多数人习惯写很多规模很小的程序，少量规模较大的程序 \\ \hline
+        线性回归方法
+        & \vspace{-1em}
+        \begin{enumerate}[label=\arabic*.,leftmargin=1em]
+            \item 计算的时候计算了两组线性回归的参数，也就是项目所需的资源并不是直接由程序规模和历史数据中的生产效率相除得到。程序的复杂度和程序规之间并不是简单的正相关关系。
+            \item 线性回归方法估算的是一定概率条件下估算值的分布。例如最终实际程序规模有90\%的可能性落在$(a, b)$区间内
+            \item Range为在一定概率条件下的变化区间，而$p$为概率
+            \item Variance为扰动程度：有时候，历史数据中的一些极端数据会造成相关性的“假象”，故需要先进行数据除噪
+            \vspace{-1em}
+            $$\begin{array}{l}
+            Plan\ Size = \beta_{0\ size} + \beta_{1\ size}(E) \\
+            Plan\ Time = \beta_{0\ time} + \beta_{1\ time}(E) \\
+            Range = t(p,df)\delta\sqrt{1 + \frac{1}{n} + \frac{(x_k-x_{avg})^2}{\sum\limits_{i=1}\limits^{n}(x_i-x_{avg})^2}} \\
+            Variance = \delta^2 = \frac{1}{n-2}\sum\limits_{i=1}\limits^n(y_i - \beta_0 - \beta_1x_i)^2 \\
+            \end{array}$$\vspace{-1.8em}
+        \vspace{-1.3em}
+        \end{enumerate}
+        & \vspace{-1em}
+        \begin{enumerate}[label=\arabic*.,leftmargin=1em]
+            \item Plan Size和估算的类数量不呈现45度，是受到了估算误差和方法外代码的数量共同影响
+            \item 该方法没有使用生产效率进行计算，为什么在PROBE中不使用生产效率？这样子使用好不好？因为Plan Size是在一个范围内波动，生产效率也在一个范围内波动，如果将生产效率作为分母，那么可能会导致更大的误差，也就违背了误差的出发点
+            \item 估算能力的强弱关注是多稳定，而不是多接近具体的实际情况
+            \vspace{-1.3em}
+        \end{enumerate} \\ \hline
+    \end{longtable}
+	\end{spacing}
+\vspace{-1em}

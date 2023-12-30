@@ -1,0 +1,468 @@
+\section{定量管理与仿真建模}
+
+\subsection{定量管理}
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/高成熟度项目管理.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{一般的项目管理}
+主要关心
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 当前状况（注意：也可能使用数据）
+        \item 是否需要调整干预
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+但是，回答不了必须进行预测的问题，例如
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 维持现状，项目最后是否能成功？
+        \item 如果某些方面进行调整，会有什么不同的结果？
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\subsubsection{定量的项目管理}
+基于数据，主要关心
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 你对当前状态理解是否有足够信心？
+        \item 对偏差的理解
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+回答如下典型问题
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 项目最后能否成功？多大把握？是否需要预防？
+        \item 如果某些方面进行调整，会有什么不同的结果？
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\subsubsection{为什么需要理解偏差}
+有的时候，我们会面临这样的问题：客户希望10周以内交付，但是，历史数据表明，类似任务是$9\sim 11$周完成，那这个任务该接受么？
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.75\textwidth]{images/为什么需要理解偏差.png}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{定量管理基本范式}
+构建定量模型
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 子过程能力基线
+        \item 过程模型
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+应用模型：监控影响子过程的关键因素
+
+\subsubsection{基本概念}
+\begin{itemize}
+    \item （子）过程性能：遵循某个特定（子）过程的之后产生结果的量化描述，既包括（子）过程度量Xi（例如，时间、缺陷消除效率、工时等），也包括产物度量Yi（例如，缺陷密度，相应时间等）
+    \item （子）过程性能基线：上述过程性能的一个定量化的刻画，一般包括均值和范围。通常用作过程性能的benchmark
+    \item 过程或子过程性能模型：依据子过程的逻辑关系构建相应的数学模型，描述子过程性能基线和整体过程有意义的性能输出（例如，质量、生产效率、成本等）之间关系。例如过程Yield和Phase Yield
+\end{itemize}
+
+\subsubsection{定量模型构建的关键实践}
+\begin{figure}[H]
+	\setcounter{subfigure}{0}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat{
+	\begin{minipage}[t]{0.5\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{images/定量模型构建的关键实践.pdf}
+	\end{minipage}
+	}
+	\subfloat{
+	\begin{minipage}[t]{0.49\linewidth}
+	\centering
+	\includegraphics[width=\textwidth]{images/定量模型构建的关键实践练习.pdf}
+	\end{minipage}
+	}
+	\centering
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{定量模型应用（定量管理）的关键实践}
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/定量模型应用（定量管理）的关键实践.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\subsection{常用定量管理技术}
+定量管理技术通常被分为\textbf{非统计技术}和\textbf{统计技术}，这些技术的使用能帮助解决软件项目管理中多种问题
+
+\subsubsection{常用非统计技术}
+非统计技术一般是为了描述数据集整体特征或者关联关系，从而帮助选择适用的统计技术以应用于给定的数据集，以及调查通过数据分析检测到异常的原因。例如，检查表（或列联表），帕累托图，直方图，因果图，散点图等。
+
+
+\paragraph{直方图}~{} \par
+直方图以频率统计的方式进行显示，可以描述过程属性的频率，例如缺陷修复的时间、每次测试发现的缺陷的个数、每天无故障工作的时间、计算产品的不合格率等
+
+一般用于有助于判断过程是否正常，过程能力是否满足需要，不良产品是否发生，分析产品质量问题的原因等
+\begin{figure}[H]
+	\setcounter{subfigure}{0}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat[案例1：人力资源分配直方图]{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/人力资源分配直方图.png}
+	\end{minipage}
+	}
+	\subfloat[案例2：缺陷占比直方图]{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/缺陷占比直方图.png}
+	\end{minipage}
+	}
+	\centering
+    \vspace{-1em}
+\end{figure}
+
+\paragraph{帕累托图}~{} \par
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 一种特殊的直方图
+        \item 按照由高到低排列的直方图
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\begin{wraptable}{r}{0.33\textwidth}
+    \centering
+    \vspace{-1.7em}
+    \includegraphics[width=0.33\textwidth]{images/帕累托图示例.png}
+    \vspace{-4em}
+\end{wraptable}
+案例：如图显示了IBM Rochester产品缺陷原因的帕累托分析示例。发现接口问题(INTF)和数据初始化问题(INIT)是该产品缺陷的主要原因。通过在整个设计，实施和测试过程中专注于这两个领域，并通过同行专家进行技术培训，可以观察到明显的改进。图中的其他缺陷原因包括复杂的逻辑问题(CPLX)，与翻译有关的本国语言问题(NLS)，与地址有关的问题(ADDR)和数据定义问题(DEFN)。
+
+\paragraph{因果图}~{} \par
+因果图是用来分析影响产品质量的各种原因的一种有效的定性的分析图，它将对特性或结果有影响的要素加以分类分析，是一种发现问题根本原因的方法，可以让项目组成员通过头脑风暴、集思广益的方法从各个方面各种不同的角度找出这些问题的所有原因
+
+\begin{wraptable}{r}{0.55\textwidth}
+    \centering
+    \vspace{-1.5em}
+    \includegraphics[width=0.55\textwidth]{images/因果图示例.png}
+    \vspace{-4em}
+\end{wraptable}
+案例：某公司发现代码评审时发现的缺陷密度较低，使用因果图分析得知影响评审结果的因素有硬件资源、流程、方法、人员等。深入的调查发现此项目工期、规模都是稳定的，开发人员的工作环境和硬件资源也是固定的，且项目组人员也严格遵守了组织订立的过程和方法，但是项目进行代码评审的人员都是缺少开发经验的新人，这可能是导致代码评审发现的缺陷数偏少的根本原因。
+
+\paragraph{散布（点）图}~{} \par
+整理和观察收集到的数据的常用图形工具：散布图表示的是一个变量相对于另一个变量的表现情况，可以假定一个变量是因变量，另一个变量是自变量。散布图通常表现了5种相关关系。如图所示的散布图中分别表现了两个变量之间的弱正相关、弱负相关、不相关、强正相关、强负相关。
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/散布图.png}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{常用统计技术}
+\begin{itemize}
+    \item 统计思维认识到许多决策是在\textbf{不确定条件}下做出的。统计方法有助于\textbf{量化这种不确定性}并指导采取行动以减少不确定性
+    \item 统计分析支持许多类型的决策，在支持过程管理决策的统计分析中，有效的过程管理通常需要两级决策
+    \begin{itemize}
+        \item 实时控制单个活动或子流程
+        \item 根据当前和已完成的活动对未来和最终过程的结果进行预测
+    \end{itemize}
+    \item 常用的统计技术包括：\textbf{统计过程控制图，回归分析，方差分析，预测区间，假设检验，敏感性分析}等
+\end{itemize}
+
+
+\paragraph{控制图}~{} \par
+\begin{itemize}
+    \item 控制图是根据概率统计原理构造的一种图，用来监测生产过程是否处于控制状态
+    \item 控制图是对过程质量数据测定、记录从而进行质量管理的一种用科学方法设计的图
+    \item 图上有\textbf{中心线}(CL)、\textbf{上控制限}(UCL)和\textbf{下控制限}(LCL)，并有按时间顺序抽取的样本统计量数值的描点序列
+\end{itemize}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.55\textwidth]{images/控制图.png}
+    \vspace{-1em}
+\end{figure}
+
+\begin{wraptable}{r}{0.55\textwidth}
+    \centering
+    \vspace{-1.5em}
+    \includegraphics[width=0.55\textwidth]{images/正态分布.png}
+    \vspace{-2.5em}
+\end{wraptable}
+控制图可由正态分布演变而来：正态分布可用两个参数即均值$\mu$和标准差$\sigma$来决定。正态分布有一个结论对质量管理很有用，即无论均值$\mu$和标准差$\sigma$取何值，产品质量特性值落在$\mu \pm 3\sigma$之间的概率为99.73\%，落在$\mu \pm 3\sigma$之外的概率为$100\% - 99.73\% = 0.27\%$，而超过一侧，即大于$\mu + 3\sigma$或小于$\mu - 3\sigma$的概率为$0.27\%/2=0.135\% \approx 1\text{\textperthousand}$。
+
+以下显示了不处于受控状态的8种典型情况（异常模式）：
+\begin{figure}[H]
+	\setcounter{subfigure}{0}
+	\centering
+	\vspace{-0.5em}	
+	\subfloat{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/异常模式1.png}
+	\end{minipage}
+	}
+	\subfloat{
+	\begin{minipage}[t]{0.47\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/异常模式2.png}
+	\end{minipage}
+	}
+	\centering
+    \vspace{-1em}
+\end{figure}
+
+\begin{wraptable}{r}{0.45\textwidth}
+    \centering
+    \vspace{-2em}
+    \includegraphics[width=0.45\textwidth]{images/两类错误.png}
+    \vspace{-4.5em}
+\end{wraptable}
+两类错误（需要检验）：
+\begin{itemize}
+    \item \uppercase\expandafter{\romannumeral1}类错误：虚发警报错误，在生产正常的情况下，纯粹出于偶然而点子出界的概率虽然很小，但不是绝对不可能发生。故当生产正常而根据点出界判断生产异常就犯了虚发警报错误，发生这种错误的概率通常记以$\alpha$。
+    \item \uppercase\expandafter{\romannumeral2}类错误：漏发警报错误，在生产异常的情况下，产品质量的分布偏离典型分布，但总有一部分产品的质量特性值在上下控制界之内。如果抽到这样的产品进行检测描点，根据点未出界判断生产正常就为漏发警报错误，此概率通常记以$\beta$。
+\end{itemize}
+
+控制图典型应用流程
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/控制图典型应用流程.png}
+    \vspace{-1em}
+\end{figure}
+
+\paragraph{回归分析}~{} \par
+\begin{itemize}
+    \item 回归分析预测法，是在分析现象自变量和因变量之间相关关系的基础上，建立变量之间的回归方程，并将回归方程作为预测模型
+    \item 回归分析预测法是一种重要的预测方法，例如，在对市场现象未来发展状况和水平进行预测时，如果能将影响市场预测对象的主要因素找到，并且能够取得其数量资料，就可以采用回归分析预测法进行预测
+\end{itemize}
+
+多变量线性回归分析步骤
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.65\textwidth]{images/多变量线性回归分析步骤.pdf}
+    \vspace{-1em}
+\end{figure}
+
+\paragraph{假设检验}~{} \par
+\begin{itemize}
+    \item 假设检验又称“显著性检验”，是用来判断样本与样本，样本与总体的差异是由抽样误差引起还是本质特征差别造成的统计推断方法。其基本原理是先对总体的特征作出某种假设，然后通过抽样研究的统计推理，对此假设应该被拒绝还是接受作出推断
+    \item 检验统计量：根据样本观测结果计算得到，是对样本估计量的概率标准化结果
+\end{itemize}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.45\textwidth]{images/假设检验.png}
+    \vspace{-1em}
+\end{figure}
+
+假设检验步骤为：
+\begin{enumerate}[label=\arabic*.]
+    \item 根据问题要求建立备选假设$H_1$和原假设$H_0$（一般认为没有差异）
+    \item 从研究的总体中抽出一个随机样本
+    \item 选取合适的统计量，其抽样分布不含任何未知参数。利用样本数据计算具体数据。以便计算其分位点
+    \item 确定一个适当的显著性水平，并计算出其临界值，指定拒绝域
+    \item 将统计量的值与临界值进行比较，作出决策：
+    \begin{itemize}
+        \item 统计量的值落在拒绝域，拒绝$H_0$，否则不拒绝$H_0$
+        \item 也可以直接利用$p$值作出决策
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{方差分析}
+\begin{itemize}
+    \item 方差分析(ANOV)：方差分析是采用数理统计的方法对所有结果进行分析，鉴别各种因素对研究对象的某些特征值影响大小的一种有效方法。用于两个及两个以上的样本均数差别的显著性检验
+    \item 方差分析的目的：通过数据分析找出对该事物有显著影响的因素；研究各因素之间的交互作用是否对该事物造成影响
+\end{itemize}
+
+\subsection{仿真建模}
+\subsubsection{仿真建模基本概念}
+\textbf{模型：}模型是对真实或概念复杂系统的抽象。一个模型被设计用来显示人们想要研究、预测、修改或控制的系统的显著特征和特性。
+
+\textbf{仿真模型：}仿真模型是一种计算机化的模型，代表某种动态系统或现象。当操纵真实系统的成本、风险或后勤成本过高时，这是一种获得重要见解的廉价方法。当被建模系统的复杂性超出静态模型或其他技术所能有效表示的范围时，通常采用仿真解决实际系统中经常会遇到复杂性：\textbf{系统不确定性和随机性，动态行为，反馈机制}。
+
+\textbf{软件过程仿真模型：}软件过程仿真模型关注于特定的软件开发/维护/演化过程。它可以表示当前已实施（按现状）或计划在未来实施的过程。
+\begin{itemize}
+    \item 进行软件过程模型的仿真有多种原因。在许多情况下，仿真有助于决策。它还有助于降低风险，并帮助在战略、战术和运营层面进行管理。
+    \item 可将使用软件过程仿真的许多原因归纳为六类目的：战略管理；规划；控制和运营管理；流程改进和技术采用；理解；培训和学习。
+\end{itemize}
+
+\subsubsection{仿真建模的步骤}
+\paragraph*{确定建模的范围}~{} \par
+确定模型范围是一个重要的问题，也是一个反复的过程。该模型的范围必须足够大，以完全解决提出的关键问题。
+
+例如，公司可能正在考虑本地化到代码和单元测试步骤的过程更改。他们想开发一个模型来预测这种变化对整个项目绩效的影响。尽管对过程所做的更改仅限于代码和单元测试步骤，但更改可能会影响后期测试阶段的质量和性能。因此，模型的范围需要反映出流程变更的这些扩展影响。
+
+\paragraph*{定义结果变量}~{} \par
+结果变量是回答与模型目的一起指定的关键问题所需的信息元素。根据所提出的关键问题，可以设计出许多不同的变量作为过程模拟的结果。
+
+典型结果变量包括以下内容：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 成本
+        \item 周期时间（又称持续时间，时间表，上市时间，间隔）
+        \item 缺陷级别
+        \item 随着时间的推移人员需求
+        \item 人员使用率
+        \item 成本/收益，投资回报率(ROI)或其他经济指标（通常对变化感兴趣）
+        \item 产量/生产率
+        \item 队列长度（积压）
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\paragraph*{过程抽象}~{} \par
+在计划和开发仿真模型时，模型构建者需要确定过程的关键元素，它们之间的相互关系和行为应包括在模型中。重点应放在过程中与模型的目的特别相关并被认为会影响结果变量的那些方面。例如，要确定：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 关键活动和任务
+        \item 主要对象（例如，代码单元，设计，问题报告）
+        \item 重要资源（例如人员，硬件）
+        \item 活动依赖性，活动之间的对象流和排序
+        \item 迭代循环，反馈循环和决策点
+        \item 其他结构上的相互依赖性（例如，根据检查期间发现的缺陷数量，检查后修改 代码单元的工作）
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\paragraph*{选择和定义输入参数}~{} \par
+要包含在模型中的输入参数（关键因素，驱动因素，独立变量）在很大程度上取决于所需的结果变量和确定的过程抽象。通常，需要许多参数来驱动软件过程仿真模型。有些需要几百个参数。下面提供了几种典型输入参数的示例：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 收到的工作量（通常以软件大小(LOC)或功能点等衡量）
+        \item 根据尺寸来进行设计的努力(Effort)
+        \item 在测试或检查过程中发现缺陷的效率
+        \item 代码返工的工作量取决于要纠正的缺陷的大小和数量
+        \item 代码重做期间的缺陷消除和注入率
+        \item 决策点结果；返工周期数
+        \item 雇用率；人员流失率
+        \item 随着时间的推移，人员的能力和动力
+        \item 提供的培训的数量和效果
+        \item 资源限制
+        \item 产品版本发布的频率
+    \end{itemize}
+\end{multicols}
+\vspace{-1em}
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.55\textwidth]{images/过程仿真模型构成要素之间的关系图.png}
+    \vspace{-1em}
+\end{figure}
+
+\subsubsection{常用仿真技术}
+\begin{itemize}
+    \item 最常用的方法：蒙特卡罗仿真、离散事件仿真和系统动力学仿真
+    \item 混合仿真
+\end{itemize}
+
+\paragraph{蒙特卡罗仿真}~{} \par
+蒙特卡罗方法又被称为统计模拟法或者随机抽样技术，是一种以概率和统计理论方法为基础的随机模拟方法。其原理是当要模拟的对象本身具有某种概率特征时，可以用计算机模拟的方法产生某种抽样结果，然后根据抽样结果计算统计量以及参数的值。
+
+场景：蒙特卡洛模拟作为一种常用的模拟技术，在PMBOK里经常可以看到它的身影，其主要出现在风险管理知识领域中的定量风险分析过程，是用于做项目定量风险分析的工具之一，同时蒙特卡洛模拟也可以用于估算进度或成本以及制定进度计划等
+
+主要步骤：
+\vspace{-0.8em}
+\begin{multicols}{2}
+    \begin{enumerate}[label=\arabic*.]
+        \item 对重要的变量建立一个概率分布
+        \item 对上述的每一个变量建立起累计概率分布
+        \item 为每一个变量建立随机数区间
+        \item 生成随机数
+        \item 进行一系列的模拟试验
+    \end{enumerate}
+\end{multicols}
+\vspace{-1em}
+
+\begin{wraptable}{r}{0.5\textwidth}
+    \centering
+    \vspace{-3em}
+    \includegraphics[width=0.5\textwidth]{images/蒙特卡洛仿真示例.png}
+    \vspace{-4em}
+\end{wraptable}
+案例：谨慎的估算师会考虑各种可能性。蒙特卡洛仿真通过为每次仿真运行从输入分布中选择随机样本，并提供概率分布作为输出来支持这种风险分析。如下是总人力的仿真结果。
+
+\paragraph{离散事件仿真}~{} \par
+\begin{wraptable}{r}{0.2\textwidth}
+    \centering
+    \vspace{-2em}
+    \includegraphics[width=0.2\textwidth]{images/离散事件仿真主要步骤.png}
+    \caption*{离散事件仿真步骤}
+    \vspace{-5em}
+\end{wraptable}
+离散事件仿真模型是离散的和动态的，它能够使用确定的数值和各种随机数值进行蒙特卡罗仿真。离散事件仿真模型所模拟的系统的状态变量随一个个事件的发生而在特定的时间点离散变化，系统的状态变化是由（往往是随机发生的）事件驱动的。
+
+应用场景：离散事件仿真适合于以过程为基础的场景，过程中各项活动随着事件的触发状态发生变化，具有强大的模拟各种事件流、过程流的能力，并且能够定量的评价过程能力。
+
+离散事件系统：系统中的状态只是在离散时间点上发生变化，而这些离散时间点一般是不确定的
+
+案例：以单服务台顾客排队为例，使用离散事件仿真模拟进行模拟。相邻两个顾客到达服务台的时间间隔服从参数为5 min的指数分布，服务员为每位顾客的服务时间服从参数为4 min的指数分布。
+
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.35\textwidth]{images/离散事件仿真示例.png}
+    \vspace{-1em}
+\end{figure}
+
+\paragraph{系统动力学仿真}~{} \par
+系统动力学仿真模拟的系统的状态随时间连续变化，也称为连续仿真。它动态的使用一组不同的方程计算系统或过程随着时间的变化的趋势
+
+场景：系统动力学仿真本质上不是随机的，和离散事件仿真相比，它主要用于从比较高阶的层面对过程进行建模，没有关注太多的细节。系统动力学仿真工具通常在过程循环方面具有很好的图形表现能力
+
+其开发目的是为复杂的连续系统建模，以改善管理政策和组织结构
+
+系统动力学在解决问题时主要分为以下五个具体步骤：
+\begin{enumerate}[label=\arabic*.]
+    \item 分析阶段:运用系统动力学方法来分析研究对象，了解系统的整体结构和系统变量之间的相互作用，来解答研究的问题
+    \item 反馈机制分析阶段：首先划分系统的层次结构，了解系统整体和局部的反馈机制，确定变量的类型及变量之间的相互作用，从而明确模型的主回路
+    \item 建立方程式：列出各变量规范的数学方程式，并赋予常数、表函数等相关变量的初始值
+    \item 仿真模拟与政策分析：运行建立好的系统动力学模型，利用案例模拟仿真，并结合研究领域进行政策分析，进一步修改和完善系统
+    \item 模型的检验和评估：利用其他一些案例资料，对该模型进行检验模拟，然后根据结果对模型进行评价
+\end{enumerate}
+
+案例：某项目的规模估计为50000 KLOC，发人员的原始数量为30，项目工期估计为450天。到目前为止已经完成了7500 KLOC，每人每天可以完成2.5 KLOC。按照这样的速度，到截止日期将有8750 KLOC未完成。以下通过系统动力学仿真模拟增加人力和加班时间对项目完成程度的影响。
+\begin{figure}[H]
+    \vspace{-0.5em}
+	\centering
+	\includegraphics[width=0.85\textwidth]{images/系统动力学仿真示例.png}
+    \vspace{-1em}
+\end{figure}
+
+\paragraph{混合仿真}~{} \par
+混合仿真模型指的是混合了两种或多种仿真方法的模型。在软件过程仿真方面，混合仿真通常是混合离散事件仿真和系统动力学仿真两种方法。
+
+由于能够支持混合仿真的工具不是很多，再加上混合仿真的复杂度很高，因此混合仿真模型应用不是很广泛。
+
+混合仿真模型既包含动态性，又包含随机性，能仿真过程循环、过程流、工作产品和资源。
+
+\textbf{垂直分层机制：}基于垂直分层机制的软件过程混合仿真建模中，位于较高层抽象层次的仿真范式主要负责战略决策或环境动态因素的建模，而位于低层次的仿真范式主要用于构建操作层或具体实现活动（编码、集成、测试等）的仿真模型。
+
+\textbf{水平联动机制：}该机制中不同仿真范式间没有明显的界限，不同的建模范式间是混合在一起的。迭代式软件开发过程可以采用此混合机制来建立混合仿真模型。
